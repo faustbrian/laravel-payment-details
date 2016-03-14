@@ -1,18 +1,42 @@
 <?php
 
+/*
+ * This file is part of Laravel Payment Details.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DraperStudio\PaymentDetails\Traits;
 
 use DraperStudio\PaymentDetails\Models\PaymentDetail;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use InvalidArgumentException;
 
+/**
+ * Class HasPaymentDetails.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 trait HasPaymentDetails
 {
+    /**
+     * @return mixed
+     */
     public function paymentDetails()
     {
         return $this->morphMany(PaymentDetail::class, 'detailable');
     }
 
+    /**
+     * @param $provider
+     * @param $data
+     * @param $identifier
+     *
+     * @return mixed
+     */
     public function addPaymentDetails($provider, $data, $identifier)
     {
         $provider = $this->buildPaymentDetailProvider($provider);
@@ -31,6 +55,12 @@ trait HasPaymentDetails
         return $this->firstOrNewPaymentDetail($provider, $identifier, $data);
     }
 
+    /**
+     * @param $provider
+     * @param null $identifier
+     *
+     * @return mixed
+     */
     public function getPaymentDetails($provider, $identifier = null)
     {
         $provider = $this->buildPaymentDetailProvider($provider);
@@ -44,6 +74,13 @@ trait HasPaymentDetails
         return $identifier ? $query->firstOrFail() : $query->get();
     }
 
+    /**
+     * @param $provider
+     * @param $identifier
+     * @param $data
+     *
+     * @return mixed
+     */
     private function firstOrNewPaymentDetail($provider, $identifier, $data)
     {
         $data = array_only($data, $provider->getFields());
@@ -65,6 +102,11 @@ trait HasPaymentDetails
         return $result;
     }
 
+    /**
+     * @param $provider
+     *
+     * @return mixed
+     */
     private function buildPaymentDetailProvider($provider)
     {
         $providerClass = "DraperStudio\\PaymentDetails\\Providers\\$provider";
