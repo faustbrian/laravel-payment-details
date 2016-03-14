@@ -10,9 +10,6 @@ use Illuminate\Database\Migrations\Migration;
  */
 class CreatePaymentDetailsTable extends Migration
 {
-    /**
-     *
-     */
     public function up()
     {
         Schema::create('payment_details', function (Blueprint $table) {
@@ -27,9 +24,6 @@ class CreatePaymentDetailsTable extends Migration
         });
     }
 
-    /**
-     *
-     */
     public function down()
     {
         Schema::dropIfExists('payment_details');
