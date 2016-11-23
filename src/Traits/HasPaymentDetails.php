@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel Payment Details.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\PaymentDetails\Traits;
 
 use BrianFaust\PaymentDetails\Models\PaymentDetail;
@@ -19,7 +28,7 @@ trait HasPaymentDetails
 
         $missingFields = [];
         foreach ($provider->getFields() as $field) {
-            if (!array_key_exists($field, $data)) {
+            if (! array_key_exists($field, $data)) {
                 $missingFields[] = $field;
             }
         }
@@ -69,7 +78,7 @@ trait HasPaymentDetails
     {
         $providerClass = "BrianFaust\\PaymentDetails\\Providers\\$provider";
 
-        if (!class_exists($providerClass)) {
+        if (! class_exists($providerClass)) {
             throw new InvalidArgumentException('The provider ['.$provider.'] is not supported.');
         }
 
