@@ -11,8 +11,8 @@
 
 namespace BrianFaust\PaymentDetails\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use BrianFaust\Eloquent\Models\Traits\EncryptAttributes;
+use Illuminate\Database\Eloquent\Model;
 
 class PaymentDetail extends Model
 {
