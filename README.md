@@ -11,11 +11,7 @@ $ composer require faustbrian/laravel-payment-details
 And then include the service provider within `app/config/app.php`.
 
 ``` php
-'providers' => [
-    // ... Illuminate Providers
-    // ... App Providers
-    BrianFaust\PaymentDetails\ServiceProvider::class
-];
+BrianFaust\PaymentDetails\PaymentDetailsServiceProvider::class
 ```
 
 ### Migration
@@ -23,7 +19,7 @@ And then include the service provider within `app/config/app.php`.
 To get started, you'll need to publish all vendor assets:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\PaymentDetails\ServiceProvider"
+$ php artisan vendor:publish --provider="BrianFaust\PaymentDetails\PaymentDetailsServiceProvider"
 ```
 
 And then run the migrations to setup the database table.
