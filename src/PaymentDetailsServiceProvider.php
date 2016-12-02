@@ -11,7 +11,9 @@
 
 namespace BrianFaust\PaymentDetails;
 
-class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
+use BrianFaust\ServiceProvider\ServiceProvider;
+
+class PaymentDetailsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
