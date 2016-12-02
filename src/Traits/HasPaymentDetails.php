@@ -28,7 +28,7 @@ trait HasPaymentDetails
 
         $missingFields = [];
         foreach ($provider->getFields() as $field) {
-            if (! array_key_exists($field, $data)) {
+            if (!array_key_exists($field, $data)) {
                 $missingFields[] = $field;
             }
         }
@@ -64,10 +64,10 @@ trait HasPaymentDetails
                                    ->firstOrFail();
         } catch (ModelNotFoundException $e) {
             $result = $this->paymentDetails()->save(new PaymentDetail([
-                'provider' => $provider->getIdentifier(),
+                'provider'   => $provider->getIdentifier(),
                 'identifier' => $identifier,
-                'data' => $data,
-                'checksum' => sha1(json_encode($data)),
+                'data'       => $data,
+                'checksum'   => sha1(json_encode($data)),
             ]));
         }
 
@@ -78,7 +78,7 @@ trait HasPaymentDetails
     {
         $providerClass = "BrianFaust\\PaymentDetails\\Providers\\$provider";
 
-        if (! class_exists($providerClass)) {
+        if (!class_exists($providerClass)) {
             throw new InvalidArgumentException('The provider ['.$provider.'] is not supported.');
         }
 
