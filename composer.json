@@ -12,8 +12,8 @@
         "php": "^7.1",
         "faustbrian/eloquent-models": "^1.0",
         "faustbrian/laravel-service-provider": "^1.0",
-        "illuminate/database": "5.3.*",
-        "illuminate/support": "5.3.*"
+        "illuminate/database": "5.3.* || 5.4.*",
+        "illuminate/support": "5.3.* || 5.4.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "^3.2",
