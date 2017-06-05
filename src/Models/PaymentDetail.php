@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Payment Details.
  *
@@ -33,8 +30,8 @@ class PaymentDetail extends Model
 
     protected static function getEncryptedAttributes()
     {
-        return config('payment-details.encrypt')
-                    ? config('payment-details.encryptColumns')
+        return config('laravel-payment-details.encrypt')
+                    ? config('laravel-payment-details.encryptColumns')
                     : [];
     }
 }

@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Payment Details.
  *
@@ -14,26 +11,23 @@ declare(strict_types=1);
 
 namespace BrianFaust\PaymentDetails;
 
-use BrianFaust\ServiceProvider\AbstractServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class PaymentDetailsServiceProvider extends AbstractServiceProvider
+class PaymentDetailsServiceProvider extends ServiceProvider
 {
-    public function boot(): void
+    public function boot()
     {
-        $this->publishConfig();
+        $this->publishes([
+            __DIR__.'/../config/laravel-payment-details.php' => config_path('laravel-payment-details.php'),
+        ], 'config');
 
-        $this->publishMigrations();
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ], 'migrations');
     }
 
-    public function register(): void
+    public function register()
     {
-        parent::register();
-
-        $this->mergeConfig();
-    }
-
-    public function getPackageName(): string
-    {
-        return 'payment-details';
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-payment-details.php', 'laravel-payment-details');
     }
 }
