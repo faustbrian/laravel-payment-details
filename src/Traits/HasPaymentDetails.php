@@ -64,10 +64,10 @@ trait HasPaymentDetails
                                    ->firstOrFail();
         } catch (ModelNotFoundException $e) {
             $result = $this->paymentDetails()->save(new PaymentDetail([
-                'provider'   => $provider->getIdentifier(),
+                'provider' => $provider->getIdentifier(),
                 'identifier' => $identifier,
-                'data'       => $data,
-                'checksum'   => sha1(json_encode($data)),
+                'data' => $data,
+                'checksum' => sha1(json_encode($data)),
             ]));
         }
 

@@ -15,6 +15,9 @@ use Illuminate\Support\ServiceProvider;
 
 class PaymentDetailsServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     */
     public function boot()
     {
         $this->publishes([
@@ -26,6 +29,9 @@ class PaymentDetailsServiceProvider extends ServiceProvider
         ], 'migrations');
     }
 
+    /**
+     * Register any application services.
+     */
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-payment-details.php', 'laravel-payment-details');
