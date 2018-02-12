@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\PaymentDetails\Traits;
 
-use InvalidArgumentException;
 use BrianFaust\PaymentDetails\Models\PaymentDetail;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use InvalidArgumentException;
 
 trait HasPaymentDetails
 {
@@ -30,7 +30,7 @@ trait HasPaymentDetails
 
         $missingFields = [];
         foreach ($provider->getFields() as $field) {
-            if (! array_key_exists($field, $data)) {
+            if (!array_key_exists($field, $data)) {
                 $missingFields[] = $field;
             }
         }
@@ -80,7 +80,7 @@ trait HasPaymentDetails
     {
         $providerClass = "BrianFaust\\PaymentDetails\\Providers\\$provider";
 
-        if (! class_exists($providerClass)) {
+        if (!class_exists($providerClass)) {
             throw new InvalidArgumentException('The provider ['.$provider.'] is not supported.');
         }
 
