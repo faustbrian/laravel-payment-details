@@ -14,8 +14,8 @@ declare(strict_types=1);
 namespace BrianFaust\PaymentDetails\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Models\Traits\EncryptAttributes;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class PaymentDetail extends Model
 {
