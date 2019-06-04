@@ -1,19 +1,25 @@
 {
     "name": "artisanry/payment-details",
     "description": "Easy way of storing payment details for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-payment-details", "Laravel Messageable"],
+    "keywords": [
+        "laravel",
+        "framework",
+        "Laravel-payment-details",
+        "Laravel Messageable"
+    ],
     "license": "MIT",
-    "authors": [{
-        "name": "Brian Faust",
-        "email": "hello@basecode.sh",
-        "homepage": "https://basecode.sh"
-    }],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "homepage": "https://basecode.sh"
+        }
+    ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "artisanry/eloquent-models": "^1.0",
-        "illuminate/support": "^5.6",
-        "illuminate/database": "^5.6",
-        "illuminate/support": "^5.6"
+        "illuminate/database": "^5.8",
+        "illuminate/support": "^5.8"
     },
     "require-dev": {
         "graham-campbell/testbench": "^5.0",
