@@ -1,16 +1,16 @@
 # Laravel Payment Details
 
-[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Payment-Details/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Payment-Details)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-payment-details.svg?style=flat-square)]()
-[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Payment-Details.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Payment-Details/releases)
-[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Payment-Details.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Payment-Details)
+[![Build Status](https://img.shields.io/travis/artisanry/Payment-Details/master.svg?style=flat-square)](https://travis-ci.org/artisanry/Payment-Details)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/artisanry/payment-details.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/artisanry/Payment-Details.svg?style=flat-square)](https://github.com/artisanry/Payment-Details/releases)
+[![License](https://img.shields.io/packagist/l/artisanry/Payment-Details.svg?style=flat-square)](https://packagist.org/packages/artisanry/Payment-Details)
 
 ## Installation
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-payment-details
+$ composer require artisanry/payment-details
 ```
 
 ### Migration
@@ -18,7 +18,7 @@ $ composer require faustbrian/laravel-payment-details
 To get started, you'll need to publish all vendor assets:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\PaymentDetails\PaymentDetailsServiceProvider"
+$ php artisan vendor:publish --provider="Artisanry\PaymentDetails\PaymentDetailsServiceProvider"
 ```
 
 And then run the migrations to setup the database table.
@@ -37,7 +37,7 @@ $ php artisan migrate
 
 namespace App;
 
-use BrianFaust\PaymentDetails\Traits\HasPaymentDetails;
+use Artisanry\PaymentDetails\Traits\HasPaymentDetails;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
@@ -77,7 +77,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@basecode.sh. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -86,4 +86,4 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://brianfaust.me)
+[MIT](LICENSE) © [Brian Faust](https://basecode.sh)

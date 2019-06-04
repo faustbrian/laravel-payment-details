@@ -1,16 +1,16 @@
 {
-    "name": "faustbrian/laravel-payment-details",
+    "name": "artisanry/payment-details",
     "description": "Easy way of storing payment details for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-payment-details", "Laravel Messageable", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-payment-details", "Laravel Messageable"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
-        "faustbrian/eloquent-models": "^1.0",
+        "artisanry/eloquent-models": "^1.0",
         "illuminate/support": "^5.6",
         "illuminate/database": "^5.6",
         "illuminate/support": "^5.6"
@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\PaymentDetails\\": "src/"
+            "Artisanry\\PaymentDetails\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\PaymentDetails\\": "tests"
+            "Artisanry\\Tests\\PaymentDetails\\": "tests"
         }
     },
     "config": {
@@ -40,7 +40,7 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\PaymentDetails\\PaymentDetailsServiceProvider"
+                "Artisanry\\PaymentDetails\\PaymentDetailsServiceProvider"
             ]
         }
     },

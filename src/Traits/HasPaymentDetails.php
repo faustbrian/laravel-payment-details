@@ -5,15 +5,15 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Payment Details.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\PaymentDetails\Traits;
+namespace Artisanry\PaymentDetails\Traits;
 
-use BrianFaust\PaymentDetails\Models\PaymentDetail;
+use Artisanry\PaymentDetails\Models\PaymentDetail;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use InvalidArgumentException;
 
@@ -78,7 +78,7 @@ trait HasPaymentDetails
 
     private function buildPaymentDetailProvider($provider)
     {
-        $providerClass = "BrianFaust\\PaymentDetails\\Providers\\$provider";
+        $providerClass = "Artisanry\\PaymentDetails\\Providers\\$provider";
 
         if (!class_exists($providerClass)) {
             throw new InvalidArgumentException('The provider ['.$provider.'] is not supported.');
