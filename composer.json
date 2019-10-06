@@ -15,7 +15,7 @@
     }],
     "require": {
         "php": "^7.2",
-        "artisanry/eloquent-models": "^1.0",
+        "artisanry/eloquent-models": "^2.0.0",
         "illuminate/database": "^5.8|^6.0",
         "illuminate/support": "^5.8|^6.0"
     },
